@@ -16,7 +16,6 @@ public class MapPane {
     public MapPane (GoogleMap map) {
         this.mMap = map;
         setUpMap();
-
     }
     private void setUpMap() {
         final LatLng QCCenter = new LatLng(40.736600, -73.819800);
