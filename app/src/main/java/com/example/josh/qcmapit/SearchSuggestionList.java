@@ -12,7 +12,29 @@ import java.util.ArrayList;
  */
 public class SearchSuggestionList {
     public static final String[] buildingList = new String[] {
-            "Alumni Hall", "Baseball Field", "Cafeteria", "Campbell Dome", "Honors Hall", "Jefferson Hall", "Kiely Hall", "King Hall", "Kissena Hall", "Klapper Hall", "Queens Hall", "Razran Hall", "Rosenthal Library", "Science Building", "Student Union", "The Summit", "Track and Soccer Fields"
+            "Alumni Hall",
+            "Campbell Dome",
+            "Colden Auditorium",
+            "Colwin Hall",
+            "Dining Hall",
+            "Kiely Hall",
+            "Music Building",
+            "Science Building",
+            "Klapper Hall",
+            "Powdermaker Hall",
+            "Remsen Hall",
+            "Rosenthal Library",
+            "The Summit",
+            "Jefferson Hall",
+            "Razran Hall",
+            "Delany Hall",
+            "Student Union",
+            "FitzGerald Gym",
+            "King Hall",
+            "Rathaus Hall",
+            "Honors Hall",
+            "Frese Hall",
+            "Indoor Tennis Center"
     };
 
     public MainActivity mainActivity;
@@ -55,22 +77,18 @@ public class SearchSuggestionList {
     public String [] getBuildingsThatContain (String word) {
         String wordLowerCase = word.toLowerCase();
         String [] array;
-
         if (wordLowerCase.startsWith(previousWord)) {
             array = previousResult;
         } else {
             array = buildingList;
         }
-
         previousWord = wordLowerCase;
 
         if (word.length() == 0) {
             previousResult = buildingList;
             return buildingList;
         }
-
         ArrayList<String> values = new ArrayList<String>(array.length);
-
         for (String element : array) {
             if (element.toLowerCase().contains(wordLowerCase)) {
                 values.add(element);
