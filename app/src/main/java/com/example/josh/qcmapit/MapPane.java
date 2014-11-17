@@ -1,7 +1,5 @@
 package com.example.josh.qcmapit;
 
-import android.widget.FrameLayout;
-
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -27,8 +25,6 @@ public class MapPane {
 
         final CameraPosition queensCollege = new CameraPosition(QCCenter, 16, 0, 95);
         final LatLngBounds QCBounds = new LatLngBounds(QCNECorner, QCSWCorner);
-
-
 
         CameraUpdate cam1 = CameraUpdateFactory.newLatLngBounds(QCBounds, 0);
         CameraUpdate cam2 = CameraUpdateFactory.newCameraPosition(queensCollege);
