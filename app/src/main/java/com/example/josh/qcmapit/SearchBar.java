@@ -45,7 +45,11 @@ public class SearchBar {
             public boolean onQueryTextChange(String newText) {
                 mainActivity.searchSuggestionList.currentSearchView = searchView;
                 if (newText.length() == 0) {
-                    mainActivity.mapPane.removeDestinationMarker();
+                    if (markerSet.toLowerCase().equals("destination")){
+                        mainActivity.mapPane.removeDestinationMarker();
+                    } else if (markerSet.toLowerCase().equals("startlocation")) {
+                        mainActivity.mapPane.removeStartLocationMarker();
+                    }
                     mainActivity.searchSuggestionList.listView.setVisibility(View.INVISIBLE);
                     mainActivity.mapHolder.setVisibility(View.VISIBLE);
                     return false;
