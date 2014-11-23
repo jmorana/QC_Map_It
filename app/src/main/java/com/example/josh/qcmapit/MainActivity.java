@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
     public void setUpSearchIfNeeded () {
         SearchView searchView;
         if (searchBar == null || searchBar.searchView == null) {
-            searchView = ((SearchView) findViewById(R.id.searchView));
+            searchView = ((SearchView) findViewById(R.id.destinationSearchBar));
             if (searchView != null) {
                 searchBar = new SearchBar(searchView, this);
             }
@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
     public void setUpSeachSuggestionListIfNeeded () {
         ListView listView;
         if (searchSuggestionList == null || searchSuggestionList.listView == null) {
-            listView = ((ListView) findViewById(R.id.listView));
+            listView = ((ListView) findViewById(R.id.searchSuggestionListView));
             if (listView != null) {
                 searchSuggestionList = new SearchSuggestionList(listView, this);
             }
