@@ -26,7 +26,7 @@ public class SearchBar {
                         mainActivity.searchSuggestionList.listView.setVisibility(View.INVISIBLE);
                         mainActivity.mapHolder.setVisibility(View.VISIBLE);
                         mainActivity.imm.hideSoftInputFromWindow(searchView.getWindowToken(), 0);
-                        
+                        mainActivity.mapPane.setDestinationMarker(query);
                     }
                 }
                 return false;
@@ -35,6 +35,7 @@ public class SearchBar {
             @Override
             public boolean onQueryTextChange(String newText) {
                 if (newText.length() == 0) {
+                    mainActivity.mapPane.removeDestinationMarker();
                     mainActivity.searchSuggestionList.listView.setVisibility(View.INVISIBLE);
                     mainActivity.mapHolder.setVisibility(View.VISIBLE);
                     return false;
