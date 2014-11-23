@@ -14,7 +14,8 @@ import com.google.android.gms.maps.MapFragment;
 public class MainActivity extends Activity {
 
     public MapPane mapPane;
-    public SearchBar searchBar;
+    public SearchBar destinationSearchBar;
+    public SearchBar startLocationSearchBar;
     public SearchSuggestionList searchSuggestionList;
     public FrameLayout mapHolder;
     public InputMethodManager imm;
@@ -50,10 +51,10 @@ public class MainActivity extends Activity {
 
     public void setUpSearchIfNeeded () {
         SearchView searchView;
-        if (searchBar == null || searchBar.searchView == null) {
+        if (destinationSearchBar == null || destinationSearchBar.searchView == null) {
             searchView = ((SearchView) findViewById(R.id.destinationSearchBar));
             if (searchView != null) {
-                searchBar = new SearchBar(searchView, this);
+                destinationSearchBar = new SearchBar(searchView, this);
             }
         }
     }

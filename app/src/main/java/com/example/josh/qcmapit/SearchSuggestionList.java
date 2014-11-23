@@ -59,7 +59,7 @@ public class SearchSuggestionList {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 System.err.println("ABCDE ItemClick " + position);
-                mainActivity.searchBar.searchView.setQuery(getElementByPosition(position), true);
+                mainActivity.destinationSearchBar.searchView.setQuery(getElementByPosition(position), true);
             }
         });
     }
