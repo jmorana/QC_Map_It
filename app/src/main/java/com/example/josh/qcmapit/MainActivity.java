@@ -57,6 +57,12 @@ public class MainActivity extends Activity {
                 destinationSearchBar = new SearchBar(searchView, this);
             }
         }
+        if (startLocationSearchBar == null || startLocationSearchBar.searchView == null) {
+            searchView = ((SearchView) findViewById(R.id.startLocationSearchBar));
+            if (searchView != null) {
+                startLocationSearchBar = new SearchBar(searchView, this);
+            }
+        }
     }
 
     public void setUpSeachSuggestionListIfNeeded () {
