@@ -5,7 +5,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -18,6 +17,7 @@ public class MapPane {
     public GoogleMap mMap;
     public Hashtable <String, LatLng> loc;
     private Marker destinationMarker;
+    private Marker startLocationMarker;
     public MapPane (GoogleMap map) {
         loc = new Hashtable<String, LatLng>();
         loc.put("Alumni Hall", new LatLng(40.736774, -73.817755));
@@ -78,6 +78,18 @@ public class MapPane {
         if (this.destinationMarker != null) {
             this.destinationMarker.remove();
             this.destinationMarker = null;
+        }
+    }
+    public void setStartLocationMarker (String location) {
+        removeStartLocationMarker();
+        if (loc.containsKey(location)){
+            this.startLocationMarker = mMap.addMarker(new MarkerOptions().position(loc.get(location)));
+        }
+    }
+    public void removeStartLocationMarker () {
+        if (this.startLocationMarker != null) {
+            this.startLocationMarker.remove();
+            this.startLocationMarker = null;
         }
     }
 }

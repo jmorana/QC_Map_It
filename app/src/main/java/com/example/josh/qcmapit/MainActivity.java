@@ -50,17 +50,18 @@ public class MainActivity extends Activity {
     }
 
     public void setUpSearchIfNeeded () {
-        SearchView searchView;
+        SearchView destinationSearchView;
         if (destinationSearchBar == null || destinationSearchBar.searchView == null) {
-            searchView = ((SearchView) findViewById(R.id.destinationSearchBar));
-            if (searchView != null) {
-                destinationSearchBar = new SearchBar(searchView, this);
+            destinationSearchView = ((SearchView) findViewById(R.id.destinationSearchBar));
+            if (destinationSearchView != null) {
+                destinationSearchBar = new SearchBar(destinationSearchView, this, "destination");
             }
         }
+        SearchView startLocationSearchView;
         if (startLocationSearchBar == null || startLocationSearchBar.searchView == null) {
-            searchView = ((SearchView) findViewById(R.id.startLocationSearchBar));
-            if (searchView != null) {
-                startLocationSearchBar = new SearchBar(searchView, this);
+            startLocationSearchView = ((SearchView) findViewById(R.id.startLocationSearchBar));
+            if (startLocationSearchView != null) {
+                startLocationSearchBar = new SearchBar(startLocationSearchView, this, "startlocation");
             }
         }
     }

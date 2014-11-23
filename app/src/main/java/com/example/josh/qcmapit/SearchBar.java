@@ -9,8 +9,11 @@ import android.widget.SearchView;
 public class SearchBar {
     public SearchView searchView;
     public MainActivity mainActivity;
+    private String markerSet;
 
-    public SearchBar (SearchView searchView, MainActivity mainActivity) {
+    public SearchBar (SearchView searchView, MainActivity mainActivity, String markerSet) {
+        this.markerSet = markerSet;
+        System.err.println("ZXCV "+markerSet);
         this.searchView = searchView;
         this.mainActivity = mainActivity;
         addListeners();
@@ -26,7 +29,13 @@ public class SearchBar {
                         mainActivity.searchSuggestionList.listView.setVisibility(View.INVISIBLE);
                         mainActivity.mapHolder.setVisibility(View.VISIBLE);
                         mainActivity.imm.hideSoftInputFromWindow(searchView.getWindowToken(), 0);
-                        mainActivity.mapPane.setDestinationMarker(query);
+                        if (markerSet.toLowerCase().equals("destination")){
+
+                            mainActivity.mapPane.setDestinationMarker(query);
+                        } else if (markerSet.toLowerCase().equals("startlocation")) {
+
+                            mainActivity.mapPane.setStartLocationMarker(query);
+                        }
                     }
                 }
                 return false;
@@ -34,6 +43,7 @@ public class SearchBar {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                mainActivity.searchSuggestionList.currentSearchView = searchView;
                 if (newText.length() == 0) {
                     mainActivity.mapPane.removeDestinationMarker();
                     mainActivity.searchSuggestionList.listView.setVisibility(View.INVISIBLE);

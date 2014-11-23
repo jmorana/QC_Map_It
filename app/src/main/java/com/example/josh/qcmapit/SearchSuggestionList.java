@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
 
@@ -36,13 +37,13 @@ public class SearchSuggestionList {
             "Frese Hall",
             "Indoor Tennis Center"
     };
-
     public MainActivity mainActivity;
     public ListView listView;
     private String previousWord = "";
     private String [] previousResult = buildingList;
+    public SearchView currentSearchView;
     public SearchSuggestionList (ListView listView, final MainActivity mainActivity) {
-
+        this.currentSearchView = mainActivity.destinationSearchBar.searchView;
         this.listView = listView;
         this.mainActivity = mainActivity;
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
@@ -59,7 +60,7 @@ public class SearchSuggestionList {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 System.err.println("ABCDE ItemClick " + position);
-                mainActivity.destinationSearchBar.searchView.setQuery(getElementByPosition(position), true);
+                currentSearchView.setQuery(getElementByPosition(position), true);
             }
         });
     }
