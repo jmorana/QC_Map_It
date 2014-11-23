@@ -13,7 +13,6 @@ public class SearchBar {
 
     public SearchBar (SearchView searchView, MainActivity mainActivity, String markerSet) {
         this.markerSet = markerSet;
-        System.err.println("ZXCV "+markerSet);
         this.searchView = searchView;
         this.mainActivity = mainActivity;
         addListeners();

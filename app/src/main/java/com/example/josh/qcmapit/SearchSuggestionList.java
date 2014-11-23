@@ -59,7 +59,6 @@ public class SearchSuggestionList {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.err.println("ABCDE ItemClick " + position);
                 currentSearchView.setQuery(getElementByPosition(position), true);
             }
         });
