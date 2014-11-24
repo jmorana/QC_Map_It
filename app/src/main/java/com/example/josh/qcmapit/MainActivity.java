@@ -27,13 +27,23 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setUpIfNeeded();
-        mapHolder = ((FrameLayout) findViewById(R.id.map_holder));
-        imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+
+    }
+    @Override
+    protected  void onResume() {
+        super.onResume();
+        setUpIfNeeded();
     }
     public void setUpIfNeeded () {
         setUpSearchIfNeeded();
         setUpMapIfNeeded();
         setUpSeachSuggestionListIfNeeded();
+        if (mapHolder == null) {
+            mapHolder = ((FrameLayout) findViewById(R.id.map_holder));
+        }
+        if (imm == null) {
+            imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        }
     }
     public void setUpMapIfNeeded () {
         // Do a null check to confirm that we have not already instantiated the map.
