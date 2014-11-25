@@ -23,7 +23,7 @@ public class MapPane {
 
     /**
      *
-     * @param map Acutual google map
+     * @param map Actual google map
      */
     public MapPane (GoogleMap map) {
         loc = new Hashtable<String, LatLng>();
