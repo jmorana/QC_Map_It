@@ -12,6 +12,7 @@ import java.util.Hashtable;
 
 /**
  * Created by Josh on 11/17/14.
+ * Controls the actual map.
  */
 public class MapPane {
     public GoogleMap mMap;

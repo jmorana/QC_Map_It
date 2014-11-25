@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Josh on 11/17/14.
+ * Handles the suggestion list
  */
 public class SearchSuggestionList {
     public static final String[] buildingList = new String[] {

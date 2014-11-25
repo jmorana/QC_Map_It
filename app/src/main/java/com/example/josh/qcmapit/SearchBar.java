@@ -5,6 +5,7 @@ import android.widget.SearchView;
 
 /**
  * Created by Josh on 11/17/14.
+ * Search bar handler
  */
 public class SearchBar {
     public SearchView searchView;
