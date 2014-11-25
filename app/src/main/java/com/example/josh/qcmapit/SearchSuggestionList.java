@@ -36,7 +36,25 @@ public class SearchSuggestionList {
             "Rathaus Hall",
             "Honors Hall",
             "Frese Hall",
-            "Indoor Tennis Center"
+            "Indoor Tennis Center",
+            "Parking Lot 15N",
+            "Parking Lot 15S",
+            "Parking Lot 3",
+            "Parking Lot 4",
+            "Parking Lot 13",
+            "Parking Lot 10",
+            "Parking Lot 11",
+            "Parking Lot 12",
+            "Parking Lot 14",
+            "Parking Lot 6",
+            "Parking Lot 5",
+            "Parking Lot 1",
+            "Parking Lot 16",
+            "Parking Lot 17",
+            "Parking Lot 2",
+            "Parking Lot 7",
+            "Parking Lot 9"
+
     };
     public MainActivity mainActivity;
     public ListView listView;
