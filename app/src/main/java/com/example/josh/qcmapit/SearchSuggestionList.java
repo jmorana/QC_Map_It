@@ -43,6 +43,12 @@ public class SearchSuggestionList {
     private String previousWord = "";
     private String [] previousResult = buildingList;
     public SearchView currentSearchView;
+
+    /**
+     *
+     * @param listView Actual search suggestion list
+     * @param mainActivity App start point
+     */
     public SearchSuggestionList (ListView listView, final MainActivity mainActivity) {
         this.currentSearchView = mainActivity.destinationSearchBar.searchView;
         this.listView = listView;
@@ -65,6 +71,10 @@ public class SearchSuggestionList {
         });
     }
 
+    /**
+     *
+     * @param string The search string to set suggestions
+     */
     public void setBuildingsThatContain (String string) {
         String [] valuesArray = getBuildingsThatContain(string);
 
@@ -75,8 +85,13 @@ public class SearchSuggestionList {
         listView.setAdapter(adapter);
     }
 
-    public String [] getBuildingsThatContain (String word) {
-        String wordLowerCase = word.toLowerCase();
+    /**
+     *
+     * @param string The search string to generate suggestions
+     * @return buildings that contain string
+     */
+    public String [] getBuildingsThatContain (String string) {
+        String wordLowerCase = string.toLowerCase();
         String [] array;
         if (wordLowerCase.startsWith(previousWord)) {
             array = previousResult;
@@ -85,7 +100,7 @@ public class SearchSuggestionList {
         }
         previousWord = wordLowerCase;
 
-        if (word.length() == 0) {
+        if (string.length() == 0) {
             previousResult = buildingList;
             return buildingList;
         }
@@ -100,6 +115,11 @@ public class SearchSuggestionList {
         return result;
     }
 
+    /**
+     *
+     * @param position of element on the last suggestion list position on the list
+     * @return The element
+     */
     public String getElementByPosition (int position) {
         if (position >= this.previousResult.length) {
             System.err.println("Bad position in getItemByPosition()");
