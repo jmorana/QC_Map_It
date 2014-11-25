@@ -20,8 +20,10 @@ public class MainActivity extends Activity {
     public FrameLayout mapHolder;
     public InputMethodManager imm;
 
-
-
+    /**
+     *
+     * @param savedInstanceState x
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,10 @@ public class MainActivity extends Activity {
         setUpIfNeeded();
 
     }
+
+    /**
+     *
+     */
     @Override
     protected  void onResume() {
         super.onResume();

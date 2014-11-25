@@ -14,11 +14,17 @@ import java.util.Hashtable;
  * Created by Josh on 11/17/14.
  * Controls the actual map.
  */
+
 public class MapPane {
     public GoogleMap mMap;
     public Hashtable <String, LatLng> loc;
     private Marker destinationMarker;
     private Marker startLocationMarker;
+
+    /**
+     *
+     * @param map Acutual google map
+     */
     public MapPane (GoogleMap map) {
         loc = new Hashtable<String, LatLng>();
         loc.put("Alumni Hall", new LatLng(40.736774, -73.817755));
