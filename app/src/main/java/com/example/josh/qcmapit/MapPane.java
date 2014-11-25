@@ -70,6 +70,11 @@ public class MapPane {
         mMap.getUiSettings().setMyLocationButtonEnabled(false);
         mMap.setMyLocationEnabled(true);
     }
+
+    /**
+     *
+     * @param location loc hashtable key
+     */
     public void setDestinationMarker(String location) {
         removeDestinationMarker();
         if (loc.containsKey(location)){
@@ -82,6 +87,11 @@ public class MapPane {
             this.destinationMarker = null;
         }
     }
+
+    /**
+     *
+     * @param location loc hashtable key
+     */
     public void setStartLocationMarker (String location) {
         removeStartLocationMarker();
         if (loc.containsKey(location)){
