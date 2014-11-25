@@ -51,6 +51,7 @@ public class MapPane {
     }
     private void setUpMap() {
         final LatLng QCCenter = new LatLng(40.736600, -73.819800);
+        //TODO Figure out why using bounds causes a runtime error
         //final LatLng QCSWCorner = new LatLng(40.739809, -73.824877);
         //final LatLng QCNECorner = new LatLng(40.733786, -73.814867);
 
