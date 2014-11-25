@@ -18,240 +18,16 @@ import java.util.Hashtable;
 
 public class MapPane {
     public GoogleMap mMap;
-    public Hashtable <String, LatLng []> loc;
+    public Hashtable <String, LatLng []> locationCoordinates;
     private ArrayList <Marker> destinationMarker = new ArrayList<Marker>();
     private ArrayList <Marker> startLocationMarker = new ArrayList<Marker>();
-
     /**
      *
      * @param map Actual google map
      */
     public MapPane (GoogleMap map) {
-        loc = new Hashtable<String, LatLng []>();
-
-        loc.put("Alumni Hall", new LatLng [] {
-                new LatLng(40.736774, -73.817755)
-        });
-        loc.put("Campbell Dome", new LatLng [] {
-                new LatLng(40.736203, -73.818373)
-        });
-        loc.put("Colden Auditorium", new LatLng [] {
-                new LatLng(40.738195, -73.815905)
-        });
-        loc.put("Colwin Hall", new LatLng [] {
-                new LatLng(40.734977, -73.817559)
-        });
-        loc.put("Dining Hall", new LatLng [] {
-                new LatLng(40.737315, -73.817514)
-        });
-        loc.put("Kiely Hall", new LatLng [] {
-                new LatLng(40.736051, -73.816087)
-        });
-        loc.put("Music Building", new LatLng [] {
-                new LatLng(40.737994, -73.817074)
-        });
-        loc.put("Science Building", new LatLng [] {
-                new LatLng(40.734986, -73.820367)
-        });
-        loc.put("Klapper Hall", new LatLng [] {
-                new LatLng(40.736156, -73.817320)
-        });
-        loc.put("Powdermaker Hall", new LatLng [] {
-                new LatLng(40.736328, -73.819048)
-        });
-        loc.put("Remsen Hall", new LatLng [] {
-                new LatLng(40.734686, -73.819155)
-        });
-        loc.put("Rosenthal Library", new LatLng [] {
-                new LatLng(40.736487, -73.819944)
-        });
-        loc.put("The Summit", new LatLng [] {
-                new LatLng(40.737170, -73.819805)
-        });
-        loc.put("Jefferson Hall", new LatLng [] {
-                new LatLng(40.735154, -73.815975)
-        });
-        loc.put("Razran Hall", new LatLng [] {
-                new LatLng(40.734487, -73.818077)
-        });
-        loc.put("Delany Hall", new LatLng [] {
-                new LatLng(40.734911, -73.816890)
-        });
-        loc.put("Student Union", new LatLng [] {
-                new LatLng(40.734375, -73.815999)
-        });
-        loc.put("FitzGerald Gym", new LatLng [] {
-                new LatLng(40.738252, -73.819529)
-        });
-        loc.put("King Hall", new LatLng [] {
-                new LatLng(40.736984, -73.815281)
-        });
-        loc.put("Rathaus Hall", new LatLng [] {
-                new LatLng(40.737383, -73.816504)
-        });
-        loc.put("Honors Hall", new LatLng [] {
-                new LatLng(40.734610, -73.818521)
-        });
-        loc.put("Frese Hall", new LatLng [] {
-                new LatLng(40.735700, -73.817362)
-        });
-        loc.put("Indoor Tennis Center", new LatLng [] {
-                new LatLng(40.738277, -73.820548)
-        });
-        loc.put("Track and Soccar Fields", new LatLng [] {
-                new LatLng(40.736330, -73.822174)
-        });
-        loc.put("Track and Soccar Fields", new LatLng [] {
-                new LatLng(40.736330, -73.822174)
-        });
-        loc.put("Kissena Hall", new LatLng [] {
-                new LatLng(40.737373, -73.814277)
-        });
-        loc.put("Outdoor Tennis Court", new LatLng [] {
-                new LatLng(40.737556, -73.821684)
-        });
-        loc.put("Softball Field", new LatLng [] {
-                new LatLng(40.738174, -73.821292)
-        });
-        loc.put("Queens Hall", new LatLng [] {
-                new LatLng(40.737130, -73.824450)
-        });
-        loc.put("LeFrak Concert Hall", new LatLng [] {
-                new LatLng(40.737888, -73.817216)
-        });
-        loc.put("Goldstein Theatre", new LatLng [] {
-                new LatLng(40.737920, -73.815226)
-        });
-        loc.put("Gertz Center", new LatLng [] {
-                new LatLng(40.737359, -73.815875)
-        });
-        loc.put("G Building", new LatLng [] {
-                new LatLng(40.737071, -73.815776)
-        });
-        loc.put("Main Entrance", new LatLng [] {
-                new LatLng(40.737119, -73.814823)
-        });
-        loc.put("Main Exit", new LatLng [] {
-                new LatLng(40.735965, -73.814823)
-        });
-        loc.put("I Building", new LatLng [] {
-                new LatLng(40.737296, -73.818409)
-        });
-        loc.put("Alumni Plaza", new LatLng [] {
-                new LatLng(40.735086, -73.815403)
-        });
-        loc.put("Continuing Education 1", new LatLng [] {
-                new LatLng(40.734510, -73.816706)
-        });
-        loc.put("Continuing Education 2", new LatLng [] {
-                new LatLng(40.734266, -73.816886)
-        });
-        loc.put("Gate 3", new LatLng [] {
-                new LatLng(40.738549, -73.818423)
-        });
-        loc.put("Gate 2", new LatLng [] {
-                new LatLng(40.734240, -73.819759)
-        });
-        loc.put("Gate 1", new LatLng [] {
-                new LatLng(40.734049, -73.814947)
-        });
-        loc.put("Cooperman Plaza", new LatLng [] {
-                new LatLng(40.735660, -73.819665)
-        });
-        loc.put("WWII Memorial Plaza", new LatLng [] {
-                new LatLng(40.735272, -73.816620)
-        });
-        loc.put("Bookstore", new LatLng [] {
-                new LatLng(40.734232, -73.815966)
-        });
-        loc.put("Public Safety", new LatLng [] {
-                new LatLng(40.736152, -73.814842)
-        });
-        loc.put("Welcome Center", new LatLng [] {
-                new LatLng(40.735121, -73.815995)
-        });
-        loc.put("One Stop Center", new LatLng [] {
-                new LatLng(40.737342, -73.817455)
-        });
-        loc.put("Quad", new LatLng [] {
-                new LatLng(40.735573, -73.818608)
-        });
-        loc.put("Lacrosse Field", new LatLng [] {
-                new LatLng(40.737632, -73.822248)
-        });
-        loc.put("Baseball Field", new LatLng [] {
-                new LatLng(40.738944, -73.822462)
-        });
-        loc.put("Gate 6", new LatLng [] {
-                new LatLng(40.735493, -73.821666)
-        });
-        loc.put("Gate 9", new LatLng [] {
-                new LatLng(40.736355, -73.824927)
-        });
-        loc.put("Parking Lot 15N", new LatLng [] {
-                new LatLng(40.738974, -73.817124)
-        });
-        loc.put("Parking Lot 15S", new LatLng [] {
-                new LatLng(40.738702, -73.817717)
-        });
-        loc.put("Parking Lot 3", new LatLng [] {
-                new LatLng(40.738214, -73.818055)
-        });
-        loc.put("Parking Lot 4", new LatLng [] {
-                new LatLng(40.737539, -73.817583)
-        });
-        loc.put("Parking Lot 11", new LatLng [] {
-                new LatLng(40.736620, -73.816371)
-        });
-        loc.put("Parking Lot 7", new LatLng [] {
-                new LatLng(40.734489, -73.817352)
-        });
-        loc.put("Parking Lot 2", new LatLng [] {
-                new LatLng(40.734357, -73.819152)
-        });
-        loc.put("Parking Lot 17", new LatLng [] {
-                new LatLng(40.738027, -73.820070)
-        });
-        loc.put("Parking Lot 16", new LatLng [] {
-                new LatLng(40.737226, -73.814181)
-        });
-        loc.put("Parking Lot 12", new LatLng [] {
-                new LatLng(40.736163, -73.815432)
-        });
-        loc.put("Parking Lot 10", new LatLng [] {
-                new LatLng(40.737254, -73.815164)
-        });
-        loc.put("Parking Lot 9", new LatLng [] {
-                new LatLng(40.736631, -73.824337)
-        });
-        loc.put("Parking Lot 5", new LatLng [] {
-                new LatLng(40.737205, -73.820725)
-        });
-        //2 parking 14
-        loc.put("Parking Lot 14", new LatLng[]{
-                new LatLng(40.736189, -73.821047),
-                new LatLng(40.735778, -73.820747)
-        });
-
-        //2 parking 6
-        loc.put("Parking Lot 6", new LatLng[]{
-                new LatLng(40.735888, -73.821262),
-                new LatLng(40.734880, -73.821022)
-        });
-        //2 parking 13
-        loc.put("Parking Lot 13", new LatLng[]{
-                new LatLng(40.737666, -73.818815),
-                new LatLng(40.737115, -73.818756)
-        });
-        //2 parking 1
-        loc.put("Parking Lot 1", new LatLng[]{
-                new LatLng(40.737115, -73.818756),
-                new LatLng(40.734762, -73.816253)
-        });
-
-
-
         this.mMap = map;
+        setLocationHashtable();
         setUpMap();
 
     }
@@ -278,12 +54,12 @@ public class MapPane {
 
     /**
      *
-     * @param location loc hashtable key
+     * @param location locationCoordinates hashtable key
      */
     public void setDestinationMarker(String location) {
         removeDestinationMarker();
-        if (loc.containsKey(location)){
-            LatLng locations [] = loc.get(location);
+        if (locationCoordinates.containsKey(location)){
+            LatLng locations [] = locationCoordinates.get(location);
             for (LatLng coord : locations) {
                 this.destinationMarker.add(mMap.addMarker(new MarkerOptions().position(coord)));
             }
@@ -298,12 +74,12 @@ public class MapPane {
 
     /**
      *
-     * @param location loc hashtable key
+     * @param location locationCoordinates hashtable key
      */
     public void setStartLocationMarker (String location) {
         removeStartLocationMarker();
-        if (loc.containsKey(location)){
-            LatLng locations [] = loc.get(location);
+        if (locationCoordinates.containsKey(location)){
+            LatLng locations [] = locationCoordinates.get(location);
             for (LatLng coord : locations) {
                 this.startLocationMarker.add(mMap.addMarker(new MarkerOptions().position(coord)));
             }
@@ -314,5 +90,223 @@ public class MapPane {
             marker.remove();
         }
         this.startLocationMarker = new ArrayList<Marker>();
+    }
+    private void setLocationHashtable() {
+        locationCoordinates = new Hashtable<String, LatLng []>();
+        locationCoordinates.put("Alumni Hall", new LatLng[]{
+                new LatLng(40.736774, -73.817755)
+        });
+        locationCoordinates.put("Campbell Dome", new LatLng[]{
+                new LatLng(40.736203, -73.818373)
+        });
+        locationCoordinates.put("Colden Auditorium", new LatLng[]{
+                new LatLng(40.738195, -73.815905)
+        });
+        locationCoordinates.put("Colwin Hall", new LatLng[]{
+                new LatLng(40.734977, -73.817559)
+        });
+        locationCoordinates.put("Dining Hall", new LatLng[]{
+                new LatLng(40.737315, -73.817514)
+        });
+        locationCoordinates.put("Kiely Hall", new LatLng[]{
+                new LatLng(40.736051, -73.816087)
+        });
+        locationCoordinates.put("Music Building", new LatLng[]{
+                new LatLng(40.737994, -73.817074)
+        });
+        locationCoordinates.put("Science Building", new LatLng[]{
+                new LatLng(40.734986, -73.820367)
+        });
+        locationCoordinates.put("Klapper Hall", new LatLng[]{
+                new LatLng(40.736156, -73.817320)
+        });
+        locationCoordinates.put("Powdermaker Hall", new LatLng[]{
+                new LatLng(40.736328, -73.819048)
+        });
+        locationCoordinates.put("Remsen Hall", new LatLng[]{
+                new LatLng(40.734686, -73.819155)
+        });
+        locationCoordinates.put("Rosenthal Library", new LatLng[]{
+                new LatLng(40.736487, -73.819944)
+        });
+        locationCoordinates.put("The Summit", new LatLng[]{
+                new LatLng(40.737170, -73.819805)
+        });
+        locationCoordinates.put("Jefferson Hall", new LatLng[]{
+                new LatLng(40.735154, -73.815975)
+        });
+        locationCoordinates.put("Razran Hall", new LatLng[]{
+                new LatLng(40.734487, -73.818077)
+        });
+        locationCoordinates.put("Delany Hall", new LatLng[]{
+                new LatLng(40.734911, -73.816890)
+        });
+        locationCoordinates.put("Student Union", new LatLng[]{
+                new LatLng(40.734375, -73.815999)
+        });
+        locationCoordinates.put("FitzGerald Gym", new LatLng[]{
+                new LatLng(40.738252, -73.819529)
+        });
+        locationCoordinates.put("King Hall", new LatLng[]{
+                new LatLng(40.736984, -73.815281)
+        });
+        locationCoordinates.put("Rathaus Hall", new LatLng[]{
+                new LatLng(40.737383, -73.816504)
+        });
+        locationCoordinates.put("Honors Hall", new LatLng[]{
+                new LatLng(40.734610, -73.818521)
+        });
+        locationCoordinates.put("Frese Hall", new LatLng[]{
+                new LatLng(40.735700, -73.817362)
+        });
+        locationCoordinates.put("Indoor Tennis Center", new LatLng[]{
+                new LatLng(40.738277, -73.820548)
+        });
+        locationCoordinates.put("Track and Soccar Fields", new LatLng[]{
+                new LatLng(40.736330, -73.822174)
+        });
+        locationCoordinates.put("Track and Soccar Fields", new LatLng[]{
+                new LatLng(40.736330, -73.822174)
+        });
+        locationCoordinates.put("Kissena Hall", new LatLng[]{
+                new LatLng(40.737373, -73.814277)
+        });
+        locationCoordinates.put("Outdoor Tennis Court", new LatLng[]{
+                new LatLng(40.737556, -73.821684)
+        });
+        locationCoordinates.put("Softball Field", new LatLng[]{
+                new LatLng(40.738174, -73.821292)
+        });
+        locationCoordinates.put("Queens Hall", new LatLng[]{
+                new LatLng(40.737130, -73.824450)
+        });
+        locationCoordinates.put("LeFrak Concert Hall", new LatLng[]{
+                new LatLng(40.737888, -73.817216)
+        });
+        locationCoordinates.put("Goldstein Theatre", new LatLng[]{
+                new LatLng(40.737920, -73.815226)
+        });
+        locationCoordinates.put("Gertz Center", new LatLng[]{
+                new LatLng(40.737359, -73.815875)
+        });
+        locationCoordinates.put("G Building", new LatLng[]{
+                new LatLng(40.737071, -73.815776)
+        });
+        locationCoordinates.put("Main Entrance", new LatLng[]{
+                new LatLng(40.737119, -73.814823)
+        });
+        locationCoordinates.put("Main Exit", new LatLng[]{
+                new LatLng(40.735965, -73.814823)
+        });
+        locationCoordinates.put("I Building", new LatLng[]{
+                new LatLng(40.737296, -73.818409)
+        });
+        locationCoordinates.put("Alumni Plaza", new LatLng[]{
+                new LatLng(40.735086, -73.815403)
+        });
+        locationCoordinates.put("Continuing Education 1", new LatLng[]{
+                new LatLng(40.734510, -73.816706)
+        });
+        locationCoordinates.put("Continuing Education 2", new LatLng[]{
+                new LatLng(40.734266, -73.816886)
+        });
+        locationCoordinates.put("Gate 3", new LatLng[]{
+                new LatLng(40.738549, -73.818423)
+        });
+        locationCoordinates.put("Gate 2", new LatLng[]{
+                new LatLng(40.734240, -73.819759)
+        });
+        locationCoordinates.put("Gate 1", new LatLng[]{
+                new LatLng(40.734049, -73.814947)
+        });
+        locationCoordinates.put("Cooperman Plaza", new LatLng[]{
+                new LatLng(40.735660, -73.819665)
+        });
+        locationCoordinates.put("WWII Memorial Plaza", new LatLng[]{
+                new LatLng(40.735272, -73.816620)
+        });
+        locationCoordinates.put("Bookstore", new LatLng[]{
+                new LatLng(40.734232, -73.815966)
+        });
+        locationCoordinates.put("Public Safety", new LatLng[]{
+                new LatLng(40.736152, -73.814842)
+        });
+        locationCoordinates.put("Welcome Center", new LatLng[]{
+                new LatLng(40.735121, -73.815995)
+        });
+        locationCoordinates.put("One Stop Center", new LatLng[]{
+                new LatLng(40.737342, -73.817455)
+        });
+        locationCoordinates.put("Quad", new LatLng[]{
+                new LatLng(40.735573, -73.818608)
+        });
+        locationCoordinates.put("Lacrosse Field", new LatLng[]{
+                new LatLng(40.737632, -73.822248)
+        });
+        locationCoordinates.put("Baseball Field", new LatLng[]{
+                new LatLng(40.738944, -73.822462)
+        });
+        locationCoordinates.put("Gate 6", new LatLng[]{
+                new LatLng(40.735493, -73.821666)
+        });
+        locationCoordinates.put("Gate 9", new LatLng[]{
+                new LatLng(40.736355, -73.824927)
+        });
+        locationCoordinates.put("Parking Lot 15N", new LatLng[]{
+                new LatLng(40.738974, -73.817124)
+        });
+        locationCoordinates.put("Parking Lot 15S", new LatLng[]{
+                new LatLng(40.738702, -73.817717)
+        });
+        locationCoordinates.put("Parking Lot 3", new LatLng[]{
+                new LatLng(40.738214, -73.818055)
+        });
+        locationCoordinates.put("Parking Lot 4", new LatLng[]{
+                new LatLng(40.737539, -73.817583)
+        });
+        locationCoordinates.put("Parking Lot 11", new LatLng[]{
+                new LatLng(40.736620, -73.816371)
+        });
+        locationCoordinates.put("Parking Lot 7", new LatLng[]{
+                new LatLng(40.734489, -73.817352)
+        });
+        locationCoordinates.put("Parking Lot 2", new LatLng[]{
+                new LatLng(40.734357, -73.819152)
+        });
+        locationCoordinates.put("Parking Lot 17", new LatLng[]{
+                new LatLng(40.738027, -73.820070)
+        });
+        locationCoordinates.put("Parking Lot 16", new LatLng[]{
+                new LatLng(40.737226, -73.814181)
+        });
+        locationCoordinates.put("Parking Lot 12", new LatLng[]{
+                new LatLng(40.736163, -73.815432)
+        });
+        locationCoordinates.put("Parking Lot 10", new LatLng[]{
+                new LatLng(40.737254, -73.815164)
+        });
+        locationCoordinates.put("Parking Lot 9", new LatLng[]{
+                new LatLng(40.736631, -73.824337)
+        });
+        locationCoordinates.put("Parking Lot 5", new LatLng[]{
+                new LatLng(40.737205, -73.820725)
+        });
+        locationCoordinates.put("Parking Lot 14", new LatLng[]{
+                new LatLng(40.736189, -73.821047),
+                new LatLng(40.735778, -73.820747)
+        });
+
+        locationCoordinates.put("Parking Lot 6", new LatLng[]{
+                new LatLng(40.735888, -73.821262),
+                new LatLng(40.734880, -73.821022)
+        });
+        locationCoordinates.put("Parking Lot 13", new LatLng[]{
+                new LatLng(40.737666, -73.818815),
+                new LatLng(40.737115, -73.818756)
+        });
+        locationCoordinates.put("Parking Lot 1", new LatLng[]{
+                new LatLng(40.737115, -73.818756),
+                new LatLng(40.734762, -73.816253)
+        });
     }
 }
