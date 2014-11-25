@@ -282,7 +282,7 @@ public class MapPane {
     public void setDestinationMarker(String location) {
         removeDestinationMarker();
         if (loc.containsKey(location)){
-            this.destinationMarker = mMap.addMarker(new MarkerOptions().position(loc.get(location)));
+            this.destinationMarker = mMap.addMarker(new MarkerOptions().position(loc.get(location)[0]));
         }
     }
     public void removeDestinationMarker () {
@@ -299,7 +299,7 @@ public class MapPane {
     public void setStartLocationMarker (String location) {
         removeStartLocationMarker();
         if (loc.containsKey(location)){
-            this.startLocationMarker = mMap.addMarker(new MarkerOptions().position(loc.get(location)));
+            this.startLocationMarker = mMap.addMarker(new MarkerOptions().position(loc.get(location)[0]));
         }
     }
     public void removeStartLocationMarker () {
