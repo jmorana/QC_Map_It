@@ -8,6 +8,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -18,8 +19,8 @@ import java.util.Hashtable;
 public class MapPane {
     public GoogleMap mMap;
     public Hashtable <String, LatLng []> loc;
-    private Marker destinationMarker;
-    private Marker startLocationMarker;
+    private ArrayList <Marker> destinationMarker = new ArrayList<Marker>();
+    private ArrayList <Marker> startLocationMarker = new ArrayList<Marker>();
 
     /**
      *
@@ -282,14 +283,17 @@ public class MapPane {
     public void setDestinationMarker(String location) {
         removeDestinationMarker();
         if (loc.containsKey(location)){
-            this.destinationMarker = mMap.addMarker(new MarkerOptions().position(loc.get(location)[0]));
+            LatLng locations [] = loc.get(location);
+            for (LatLng coord : locations) {
+                this.destinationMarker.add(mMap.addMarker(new MarkerOptions().position(coord)));
+            }
         }
     }
     public void removeDestinationMarker () {
-        if (this.destinationMarker != null) {
-            this.destinationMarker.remove();
-            this.destinationMarker = null;
+        for (Marker marker : this.destinationMarker) {
+            marker.remove();
         }
+        this.destinationMarker = new ArrayList<Marker>();
     }
 
     /**
@@ -299,13 +303,16 @@ public class MapPane {
     public void setStartLocationMarker (String location) {
         removeStartLocationMarker();
         if (loc.containsKey(location)){
-            this.startLocationMarker = mMap.addMarker(new MarkerOptions().position(loc.get(location)[0]));
+            LatLng locations [] = loc.get(location);
+            for (LatLng coord : locations) {
+                this.startLocationMarker.add(mMap.addMarker(new MarkerOptions().position(coord)));
+            }
         }
     }
     public void removeStartLocationMarker () {
-        if (this.startLocationMarker != null) {
-            this.startLocationMarker.remove();
-            this.startLocationMarker = null;
+        for (Marker marker : this.startLocationMarker) {
+            marker.remove();
         }
+        this.startLocationMarker = new ArrayList<Marker>();
     }
 }
