@@ -12,6 +12,12 @@ public class SearchBar {
     public MainActivity mainActivity;
     private String markerSet;
 
+    /**
+     *
+     * @param searchView Search Bar Object
+     * @param mainActivity Start point for the app
+     * @param markerSet ID to know which search bar we're using
+     */
     public SearchBar (SearchView searchView, MainActivity mainActivity, String markerSet) {
         this.markerSet = markerSet;
         this.searchView = searchView;
@@ -22,6 +28,11 @@ public class SearchBar {
 
     public void addListeners () {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            /**
+             *
+             * @param query What was entered into the search bar
+             * @return Has a return. No idea what it does. Weird.
+             */
             @Override
             public boolean onQueryTextSubmit(String query) {
                 for (String element : SearchSuggestionList.buildingList) {
@@ -41,6 +52,11 @@ public class SearchBar {
                 return false;
             }
 
+            /**
+             *
+             * @param newText what was entered into the search bar
+             * @return Has a return. No idea what it does. Weird.
+             */
             @Override
             public boolean onQueryTextChange(String newText) {
                 mainActivity.searchSuggestionList.currentSearchView = searchView;
