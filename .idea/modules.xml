@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QCMapIt.iml" filepath="$PROJECT_DIR$/QCMapIt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/QC_Map_It.iml" filepath="$PROJECT_DIR$/QC_Map_It.iml" />
-      <module fileurl="file://$PROJECT_DIR$/QC_Map_It_FORK.iml" filepath="$PROJECT_DIR$/QC_Map_It_FORK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QC_Map_It_Fork.iml" filepath="$PROJECT_DIR$/QC_Map_It_Fork.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
