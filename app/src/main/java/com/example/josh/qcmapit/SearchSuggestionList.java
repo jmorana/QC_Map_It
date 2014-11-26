@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Handles the suggestion list
  */
 public class SearchSuggestionList {
-    //Learn to pull!
+    //Learn to pull and merge!
     public static final String[] buildingList = new String[] {
             "Alumni Hall",
             "Alumni Plaza",
