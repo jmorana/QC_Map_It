@@ -3,6 +3,7 @@ package com.example.josh.qcmapit;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -81,7 +82,10 @@ public class MapPane {
         if (locationCoordinates.containsKey(location)){
             LatLng locations [] = locationCoordinates.get(location);
             for (LatLng coord : locations) {
-                this.startLocationMarker.add(mMap.addMarker(new MarkerOptions().position(coord)));
+                this.startLocationMarker.add(mMap.addMarker(new MarkerOptions()
+                        .position(coord)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                ));
             }
         }
     }
