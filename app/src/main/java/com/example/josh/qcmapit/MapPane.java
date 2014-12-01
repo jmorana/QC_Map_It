@@ -1,5 +1,7 @@
 package com.example.josh.qcmapit;
 
+import android.graphics.Color;
+
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -8,6 +10,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -19,6 +23,7 @@ import java.util.Hashtable;
 
 public class MapPane {
     public GoogleMap mMap;
+    private Polyline path;
     public Hashtable <String, LatLng []> locationCoordinates;
     private ArrayList <Marker> destinationMarker = new ArrayList<Marker>();
     private ArrayList <Marker> startLocationMarker = new ArrayList<Marker>();
@@ -27,6 +32,7 @@ public class MapPane {
      * @param map Actual google map
      */
     public MapPane (GoogleMap map) {
+        System.err.println("ZXCV Test Message");
         this.mMap = map;
         setLocationHashtable();
         setUpMap();
@@ -45,7 +51,7 @@ public class MapPane {
         CameraUpdate cam2 = CameraUpdateFactory.newCameraPosition(queensCollege);
 
         mMap.moveCamera(cam2);
-
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.getUiSettings().setZoomControlsEnabled(false);
         mMap.getUiSettings().setCompassEnabled(false);
         mMap.getUiSettings().setAllGesturesEnabled(false);
@@ -65,12 +71,14 @@ public class MapPane {
                 this.destinationMarker.add(mMap.addMarker(new MarkerOptions().position(coord)));
             }
         }
+        setPathIfAppropriate();
     }
     public void removeDestinationMarker () {
         for (Marker marker : this.destinationMarker) {
             marker.remove();
         }
         this.destinationMarker = new ArrayList<Marker>();
+        removePath();
     }
 
     /**
@@ -88,12 +96,34 @@ public class MapPane {
                 ));
             }
         }
+        setPathIfAppropriate();
     }
     public void removeStartLocationMarker () {
         for (Marker marker : this.startLocationMarker) {
             marker.remove();
         }
         this.startLocationMarker = new ArrayList<Marker>();
+        removePath();
+    }
+    public void setPathIfAppropriate () {
+        System.err.println("ZXCV Entered function");
+        if (destinationMarker.size() > 0 && startLocationMarker.size() > 0) {
+            System.err.println("ZXCV Broke through");
+            setPath();
+        }
+    }
+    public void setPath () {
+        LatLng loc1 = destinationMarker.get(0).getPosition();
+        LatLng loc2 = startLocationMarker.get(0).getPosition();
+        this.path = mMap.addPolyline(new PolylineOptions()
+                .add(loc1, loc2)
+                .width(5)
+                .color(Color.BLUE));
+    }
+    public void removePath () {
+        if (path != null) {
+            this.path.remove();
+        }
     }
     private void setLocationHashtable() {
         locationCoordinates = new Hashtable<String, LatLng []>();
