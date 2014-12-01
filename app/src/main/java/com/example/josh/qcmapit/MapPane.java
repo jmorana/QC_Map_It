@@ -32,7 +32,6 @@ public class MapPane {
      * @param map Actual google map
      */
     public MapPane (GoogleMap map) {
-        System.err.println("ZXCV Test Message");
         this.mMap = map;
         setLocationHashtable();
         setUpMap();
@@ -106,9 +105,7 @@ public class MapPane {
         removePath();
     }
     public void setPathIfAppropriate () {
-        System.err.println("ZXCV Entered function");
         if (destinationMarker.size() > 0 && startLocationMarker.size() > 0) {
-            System.err.println("ZXCV Broke through");
             setPath();
         }
     }
