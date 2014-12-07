@@ -1,5 +1,7 @@
 package com.example.josh.qcmapit;
 
+import android.util.FloatMath;
+
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,8 +34,34 @@ public class MapPane {
         setLocationHashtable();
         setNodeHashtable();
         setUpMap();
+        System.err.println("ZXCV "+ distanceBetweenCoord(nodeCoordinates.get("librarysouthdoor"), nodeCoordinates.get("qcfront")));
 
     }
+
+    /*
+    Code taken from http://www.androidsnippets.com/distance-between-two-gps-coordinates-in-meter
+    and then modified to suit this app.
+     */
+    //TODO Make this fully functional
+    private static double distanceBetweenCoord(LatLng a, LatLng b) {
+        float lat_a = (float) a.latitude;
+        float lng_a = (float) a.longitude;
+        float lat_b = (float) b.latitude;
+        float lng_b = (float) b.longitude;
+
+        float pk = (float) (180/3.14169);
+        float a1 = lat_a / pk;
+        float a2 = lng_a / pk;
+        float b1 = lat_b / pk;
+        float b2 = lng_b / pk;
+
+        float t1 = FloatMath.cos(a1)*FloatMath.cos(a2)*FloatMath.cos(b1)*FloatMath.cos(b2);
+        float t2 = FloatMath.cos(a1)*FloatMath.sin(a2)*FloatMath.cos(b1)*FloatMath.sin(b2);
+        float t3 = FloatMath.sin(a1)*FloatMath.sin(b1);
+
+        return Math.acos(t1 + t2 + t3);
+    }
+
     private void setUpMap() {
         final LatLng QCCenter = new LatLng(40.736600, -73.819800);
         //TODO Figure out why using bounds causes a runtime error
