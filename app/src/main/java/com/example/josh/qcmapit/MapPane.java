@@ -20,6 +20,7 @@ import java.util.Hashtable;
 public class MapPane {
     public GoogleMap mMap;
     public Hashtable <String, LatLng []> locationCoordinates;
+    public Hashtable <String, LatLng> nodeCoordinates;
     private ArrayList <Marker> destinationMarker = new ArrayList<Marker>();
     private ArrayList <Marker> startLocationMarker = new ArrayList<Marker>();
     /**
@@ -29,6 +30,7 @@ public class MapPane {
     public MapPane (GoogleMap map) {
         this.mMap = map;
         setLocationHashtable();
+        setNodeHashtable();
         setUpMap();
 
     }
@@ -95,6 +97,51 @@ public class MapPane {
         }
         this.startLocationMarker = new ArrayList<Marker>();
     }
+
+    private void setNodeHashtable() {
+        nodeCoordinates = new Hashtable<String, LatLng>();
+        nodeCoordinates.put("gate2", new LatLng(40.734294, -73.819834));
+        nodeCoordinates.put("SBSEDOOR", new LatLng(40.734696, -73.819894));
+        nodeCoordinates.put("SBNDOOR", new LatLng(40.735243, -73.820060));
+        nodeCoordinates.put("SBSE_N1", new LatLng(40.734675, -73.819726));
+        nodeCoordinates.put("SB_N2", new LatLng(40.735396, -73.819568));
+        nodeCoordinates.put("SB_N3", new LatLng(40.735446, -73.819955));
+        nodeCoordinates.put("fountain", new LatLng(40.735696, -73.819937));
+        nodeCoordinates.put("librarysouthdoor", new LatLng(40.736002, -73.819826));
+        nodeCoordinates.put("fountainleft", new LatLng(40.735871, -73.819535));
+        nodeCoordinates.put("powderdoor", new LatLng(40.735888, -73.819047));
+        nodeCoordinates.put("kyfront", new LatLng(40.735828, -73.815693));
+        nodeCoordinates.put("kyfrontright", new LatLng(40.735581, -73.815792));
+        nodeCoordinates.put("kyne", new LatLng(40.736331, -73.815801));
+        nodeCoordinates.put("kynw", new LatLng(40.736397, -73.816285));
+        nodeCoordinates.put("kgfront", new LatLng(40.736824, -73.815294));
+        nodeCoordinates.put("mufront", new LatLng(40.737616, -73.816873));
+        nodeCoordinates.put("aefront", new LatLng(40.736820, -73.817735));
+        nodeCoordinates.put("dhfront1", new LatLng(40.736967, -73.817604));
+        nodeCoordinates.put("dhfront2", new LatLng(40.736924, -73.817136));
+        nodeCoordinates.put("dhside", new LatLng(40.737364, -73.816963));
+        nodeCoordinates.put("phfronteast", new LatLng(40.735842, -73.818066));
+        nodeCoordinates.put("phback1", new LatLng(40.736051, -73.818635));
+        nodeCoordinates.put("phback2", new LatLng(40.736464, -73.818530));
+        nodeCoordinates.put("kpfront", new LatLng(40.736507, -73.817189));
+        nodeCoordinates.put("rafront", new LatLng(40.737260, -73.816713));
+        nodeCoordinates.put("gbfront", new LatLng(40.736979, -73.815826));
+        nodeCoordinates.put("muside", new LatLng(40.738063, -73.816622));
+        nodeCoordinates.put("cafront", new LatLng(40.738274, -73.815977));
+        nodeCoordinates.put("fgfront", new LatLng(40.737735, -73.819385));
+        nodeCoordinates.put("fgside", new LatLng(40.738157, -73.819005));
+        nodeCoordinates.put("gate3", new LatLng(40.738500, -73.818456));
+        nodeCoordinates.put("summitfront", new LatLng(40.737122, -73.819719));
+        nodeCoordinates.put("summitside", new LatLng(40.737522, -73.819654));
+        nodeCoordinates.put("roside", new LatLng(40.736110, -73.819616));
+        nodeCoordinates.put("pwside", new LatLng(40.736073, -73.819387));
+        nodeCoordinates.put("jhfront", new LatLng(40.735143, -73.815879));
+        nodeCoordinates.put("jhback", new LatLng(40.735304, -73.816197));
+        nodeCoordinates.put("kyback", new LatLng(40.735684, -73.816636));
+        nodeCoordinates.put("kyside", new LatLng(40.735544, -73.816325));
+        nodeCoordinates.put("qcfront", new LatLng(40.737102, -73.814856));
+    }
+
     private void setLocationHashtable() {
         locationCoordinates = new Hashtable<String, LatLng []>();
         locationCoordinates.put("Alumni Hall", new LatLng[]{
