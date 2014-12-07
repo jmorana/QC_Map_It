@@ -1,5 +1,6 @@
 package com.example.josh.qcmapit;
 
+import android.graphics.Color;
 import android.util.FloatMath;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -37,7 +38,7 @@ public class MapPane {
         setLocationHashtable();
         setNodeHashtable();
         setUpMap();
-        System.err.println("ZXCV "+ distanceBetweenCoord(nodeCoordinates.get("librarysouthdoor"), nodeCoordinates.get("qcfront")));
+        System.err.println("ZXCV " + distanceBetweenCoord(nodeCoordinates.get("librarysouthdoor"), nodeCoordinates.get("qcfront")));
 
     }
 
