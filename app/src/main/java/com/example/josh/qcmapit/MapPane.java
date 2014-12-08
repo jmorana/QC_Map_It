@@ -25,6 +25,7 @@ public class MapPane {
     public GoogleMap mMap;
     private Polyline path;
     public Hashtable <String, LatLng []> locationCoordinates;
+    public Hashtable <String, String[]> nodeConnections;
     public Hashtable <String, LatLng> nodeCoordinates;
     private ArrayList <Marker> destinationMarker = new ArrayList<Marker>();
     private ArrayList <Marker> startLocationMarker = new ArrayList<Marker>();
@@ -189,8 +190,21 @@ public class MapPane {
         nodeCoordinates.put("kyside", new LatLng(40.735544, -73.816325));
         nodeCoordinates.put("qcfront", new LatLng(40.737102, -73.814856));
 
+        nodeConnections = new Hashtable<String, String[]>();
+        nodeConnections.put("qcfront", new String[]{
+                "kyside",
+                "jhback"
+        });
+
         for (String key : nodeCoordinates.keySet()) {
             mMap.addMarker(new MarkerOptions().position(nodeCoordinates.get(key)));
+        }
+        for (String key : nodeConnections.keySet()) {
+            for (String s : nodeConnections.get(key))
+            mMap.addPolyline(new PolylineOptions()
+                    .add(nodeCoordinates.get(key), nodeCoordinates.get(s))
+                    .width(5)
+                    .color(Color.GREEN));
         }
     }
 
