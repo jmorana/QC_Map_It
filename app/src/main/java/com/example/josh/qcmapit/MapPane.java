@@ -29,6 +29,7 @@ public class MapPane {
     public Hashtable <String, LatLng> nodeCoordinates;
     private ArrayList <Marker> destinationMarker = new ArrayList<Marker>();
     private ArrayList <Marker> startLocationMarker = new ArrayList<Marker>();
+
     /**
      *
      * @param map Actual google map
@@ -39,7 +40,6 @@ public class MapPane {
         setNodeHashtable();
         setUpMap();
     }
-
 
     private static double computeDistanceBetween(LatLng latLngA, LatLng latLngB) {
         float lat_a = (float) latLngA.latitude;
