@@ -1,7 +1,6 @@
 package com.example.josh.qcmapit;
 
 import android.graphics.Color;
-import android.util.FloatMath;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -38,32 +37,27 @@ public class MapPane {
         setLocationHashtable();
         setNodeHashtable();
         setUpMap();
-        System.err.println("ZXCV " + distanceBetweenCoord(nodeCoordinates.get("librarysouthdoor"), nodeCoordinates.get("qcfront")));
-
     }
 
-    /*
-    Code taken from http://www.androidsnippets.com/distance-between-two-gps-coordinates-in-meter
-    and then modified to suit this app.
-     */
-    //TODO Make this fully functional
-    private static double distanceBetweenCoord(LatLng a, LatLng b) {
-        float lat_a = (float) a.latitude;
-        float lng_a = (float) a.longitude;
-        float lat_b = (float) b.latitude;
-        float lng_b = (float) b.longitude;
 
-        float pk = (float) (180/3.14169);
-        float a1 = lat_a / pk;
-        float a2 = lng_a / pk;
-        float b1 = lat_b / pk;
-        float b2 = lng_b / pk;
+    private static double computeDistanceBetween(LatLng latLngA, LatLng latLngB) {
+        float lat_a = (float) latLngA.latitude;
+        float lng_a = (float) latLngA.longitude;
+        float lat_b = (float) latLngB.latitude;
+        float lng_b = (float) latLngB.longitude;
 
-        float t1 = FloatMath.cos(a1)*FloatMath.cos(a2)*FloatMath.cos(b1)*FloatMath.cos(b2);
-        float t2 = FloatMath.cos(a1)*FloatMath.sin(a2)*FloatMath.cos(b1)*FloatMath.sin(b2);
-        float t3 = FloatMath.sin(a1)*FloatMath.sin(b1);
+        double latARad = Math.toRadians(lat_a);
+        double latBRad = Math.toRadians(lat_b);
 
-        return Math.acos(t1 + t2 + t3);
+        double deltaOne = Math.toRadians(lat_b - lat_a);
+        double deltaTwo = Math.toRadians(lng_b - lng_a);
+
+        double a = Math.sin(deltaOne/2) * Math.sin(deltaOne/2) +
+                Math.cos(latARad) * Math.cos(latBRad) *
+                Math.sin(deltaTwo) * Math.sin(deltaTwo);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+        return c;
     }
 
     private void setUpMap() {
@@ -194,6 +188,10 @@ public class MapPane {
         nodeCoordinates.put("kyback", new LatLng(40.735684, -73.816636));
         nodeCoordinates.put("kyside", new LatLng(40.735544, -73.816325));
         nodeCoordinates.put("qcfront", new LatLng(40.737102, -73.814856));
+
+        for (String key : nodeCoordinates.keySet()) {
+            mMap.addMarker(new MarkerOptions().position(nodeCoordinates.get(key)));
+        }
     }
 
     private void setLocationHashtable() {
