@@ -34,11 +34,12 @@ public class MapPane {
      *
      * @param map Actual google map
      */
-    public MapPane (GoogleMap map) {
+    public MapPane (GoogleMap map, MainActivity mainActivity) {
         this.mMap = map;
         setLocationHashtable();
         setNodeHashtable();
         setUpMap();
+
     }
 
     private static double computeDistanceBetween(LatLng latLngA, LatLng latLngB) {

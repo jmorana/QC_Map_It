@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
             // Check if we were successful in obtaining the map.
             if (map != null) {
                 // The Map is verified. It is now safe to manipulate the map.
-                mapPane = new MapPane(map);
+                mapPane = new MapPane(map, this);
             }
         }
     }
