@@ -1,54 +1,55 @@
 {
-	"a":{
+	"kielySouth5":{
 		"coord":"40.735381, -73.815758",
 		"connect": [
-			"b",
-			"c"
+			"kielySide2.1",
+			"kielySouth4"
 		],
-	"b":{
+	"kielySide2.1":{
 		"coord":"40.735502, -73.815730",
 		"connect":[
-			"a"
-			"c"
+			"kielySouth5"
+			"kielySouth4"
 		]
 	},
-	"c":{
+	"kielySouth4":{
 		"coord":"40.735414, -73.815980",
 		"connect":[
-			"a",
-			"b",
-			"d"
+			"kielySouth5",
+			"kileySide2.1",
+			"kielySouth3"
 		]
 	},
-	"d":{
+	"kielySouth3":{
 		"coord":"40.735464, -73.816351",
 		"connect":[
-			"c",
+			"kielySouth4",
 			"Keily Entry 1",
-			"e"
+			"kielySouth1"
 		]
 	},
 	"Keily Entry 1":{
 		"coord":"40.735547, -73.816332",
 		"connect":[
-			"d"
+			"kielySouth3"
 		]
 	},
-	"e":{
+	"kielySouth1":{
 		"coord":"40.735507, -73.816686",
 		"connect":[
-			"d"
+			"kielySouth3"
 		]
 	},
-	"f":{
+	"quadRM":{
 		"coord":"40.735154, -73.816662",
 		"connect":[
-			"d"
+			"kielySouth3"
 		]
 	},
-	"g":{
+	"JHSE":{
 		"coord":"40.735037, -73.816506",
 		"connect":[
+		    "quadRM"
 			
 		]
 	}
